@@ -1,0 +1,20 @@
+  <div class="media bg-light rounded-pill">
+   <a href="/restaurants/ %>"> <img src="https://picsum.photos/id/<%= rand *100 %>/200/200" class="align-self-center mr-3 " alt="..."></a>
+    <div class="media-body">
+      <h5 class="mt-0"><%= @restaurant.name %></h5>
+      <p><%= @restaurant.category %></p>
+
+      <p class="mb-0"><%= @restaurant.address %></p>
+      <p class="mb-0"><%= @restaurant.phone_number %></p>
+    </div>
+    <%= link_to "Add a review", new_restaurant_review_path(@restaurant.id) %>
+  </div>
+<% @restaurant.reviews.each do |review| %>
+
+<div class="jumbotron jumbotron-fluid ">
+  <div class="container pl-5">
+    <h1 class="display-4"><%= review.rating %></h1>
+    <p class="lead"><%= review.content %></p>
+  </div>
+</div>
+<% end %>

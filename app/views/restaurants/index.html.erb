@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-around mt-4">
+<div class="spinner-border"  role="status">
+  <span class="sr-only" >Loading...</span>
+</div>
+</div>
+<% @restaurants.each do |restaurant| %>
+
+  <div class="media">
+   <a href="/restaurants/<%= restaurant.id %>"> <img src="https://picsum.photos/id/<%= rand *100 %>/200/200" class="align-self-center mr-3" alt="..."></a>
+    <div class="media-body">
+      <h5 class="mt-0"><%= restaurant.name %></h5>
+      <p><%= restaurant.category %></p>
+
+      <p class="mb-0"><%= restaurant.address %></p>
+      <p class="mb-0"><%= restaurant.phone_number %></p>
+    </div>
+  </div>
+
+<% end %>
